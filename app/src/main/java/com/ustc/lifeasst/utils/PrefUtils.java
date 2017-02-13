@@ -1,4 +1,4 @@
-package com.ustc.lifeasst.util;
+package com.ustc.lifeasst.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;

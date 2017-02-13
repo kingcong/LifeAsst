@@ -1,4 +1,4 @@
-package com.ustc.lifeasst;
+package com.ustc.lifeasst.ui.activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -11,7 +11,8 @@ import android.view.animation.RotateAnimation;
 import android.view.animation.ScaleAnimation;
 import android.widget.RelativeLayout;
 
-import com.ustc.lifeasst.util.PrefUtils;
+import com.ustc.lifeasst.R;
+import com.ustc.lifeasst.utils.PrefUtils;
 
 /**
  * 闪屏页面

@@ -1,4 +1,4 @@
-package com.ustc.lifeasst;
+package com.ustc.lifeasst.ui.activity;
 
 import java.util.ArrayList;
 
@@ -18,7 +18,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
-import com.ustc.lifeasst.util.PrefUtils;
+import com.ustc.lifeasst.R;
+import com.ustc.lifeasst.utils.PrefUtils;
 
 /**
  * 新手引导页面

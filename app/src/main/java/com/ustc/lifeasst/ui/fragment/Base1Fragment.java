@@ -1,4 +1,4 @@
-package com.ustc.lifeasst.fragment;
+package com.ustc.lifeasst.ui.fragment;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -7,7 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public abstract class BaseFragment extends Fragment {
+public abstract class Base1Fragment extends Fragment {
 
 	public Activity mActivity;//这个activity就是MainActivity
 

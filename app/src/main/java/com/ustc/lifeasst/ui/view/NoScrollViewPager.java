@@ -1,4 +1,4 @@
-package com.ustc.lifeasst.view;
+package com.ustc.lifeasst.ui.view;
 
 import android.content.Context;
 import android.support.v4.view.ViewPager;

@@ -1,4 +1,4 @@
-package com.ustc.lifeasst.fragment;
+package com.ustc.lifeasst.ui.fragment;
 
 import java.util.ArrayList;
 
@@ -11,12 +11,11 @@ import android.widget.RadioGroup.OnCheckedChangeListener;
 
 import com.ustc.lifeasst.R;
 import com.ustc.lifeasst.base.BasePager;
-import com.ustc.lifeasst.base.impl.GovAffairsPager;
 import com.ustc.lifeasst.base.impl.HomePager;
 import com.ustc.lifeasst.base.impl.NearbyPager;
 import com.ustc.lifeasst.base.impl.MinePager;
 import com.ustc.lifeasst.base.impl.FriendCirclePager;
-import com.ustc.lifeasst.view.NoScrollViewPager;
+import com.ustc.lifeasst.ui.view.NoScrollViewPager;
 
 /**
  * 主页面fragment
@@ -24,7 +23,7 @@ import com.ustc.lifeasst.view.NoScrollViewPager;
  * @author Kevin
  * @date 2015-10-18
  */
-public class ContentFragment extends BaseFragment {
+public class ContentFragment extends Base1Fragment {
 
 	private NoScrollViewPager mViewPager;
 	private RadioGroup rgGroup;
@@ -47,7 +46,6 @@ public class ContentFragment extends BaseFragment {
 		mPagers.add(new HomePager(mActivity));
 		mPagers.add(new NearbyPager(mActivity));
 		mPagers.add(new FriendCirclePager(mActivity));
-//		mPagers.add(new GovAffairsPager(mActivity));
 		mPagers.add(new MinePager(mActivity));
 
 		mViewPager.setAdapter(new ContentAdapter());
@@ -71,10 +69,6 @@ public class ContentFragment extends BaseFragment {
 					// 智慧服务
 					mViewPager.setCurrentItem(2, false);
 					break;
-//				case R.id.rb_gov:
-//					// 政务
-//					mViewPager.setCurrentItem(3, false);
-//					break;
 				case R.id.rb_setting:
 					// 设置
 					mViewPager.setCurrentItem(3, false);

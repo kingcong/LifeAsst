@@ -1,4 +1,4 @@
-package com.ustc.lifeasst;
+package com.ustc.lifeasst.ui.activity;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -6,7 +6,8 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.Window;
 
-import com.ustc.lifeasst.fragment.ContentFragment;
+import com.ustc.lifeasst.R;
+import com.ustc.lifeasst.ui.fragment.ContentFragment;
 
 public class MainActivity extends FragmentActivity {
 
