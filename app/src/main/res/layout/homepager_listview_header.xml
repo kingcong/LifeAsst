@@ -4,29 +4,87 @@
     android:layout_height="wrap_content"
     android:orientation="vertical" >
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="80dp"
         android:background="@color/detail_screen_bg"
         android:orientation="horizontal">
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="地图查询"
-            android:layout_weight="1"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="13°"
+            android:textColor="@color/white_color"
+            android:textSize="60dp"
+            android:id="@+id/homepager_tv_temputure"
+             />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="北京"
+            android:textColor="@color/white_color"
+            android:textSize="20dp"
+            android:layout_toRightOf="@+id/homepager_tv_temputure"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/homepager_tv_city"
             />
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="当前天气"
-            android:layout_weight="1"
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="啊哈"
+            android:textColor="@color/white_color"
+            android:textSize="20dp"
+            android:layout_toRightOf="@+id/homepager_tv_city"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
             />
-    </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="69"
+            android:textColor="@color/white_color"
+            android:textSize="20dp"
+            android:layout_toRightOf="@+id/homepager_tv_temputure"
+            android:layout_below="@+id/homepager_tv_city"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/homepager_tv_airquality"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="空气良"
+            android:textColor="@color/white_color"
+            android:textSize="20dp"
+            android:layout_toRightOf="@+id/homepager_tv_city"
+            android:layout_below="@+id/homepager_tv_city"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/homepager_tv_air"
+            />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@color/bg_tab_pressed"
+            android:src="@drawable/setting_press"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"/>
+
+    </RelativeLayout>
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="180dp"
         android:background="@color/bg_tab_pressed">
+
+        <com.ustc.lifeasst.ui.view.TopNewsViewPager
+            android:id="@+id/vp_top_news"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -44,6 +102,20 @@
                 android:textSize="16sp" />
 
         </RelativeLayout>
+        <!--<com.viewpagerindicator.CirclePageIndicator-->
+            <!--android:id="@+id/indicator"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:paddingLeft="5dp"-->
+            <!--android:paddingRight="5dp"-->
+            <!--/>-->
+
+        <com.shizhefei.view.indicator.RecyclerIndicatorView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"></com.shizhefei.view.indicator.RecyclerIndicatorView>
+
     </FrameLayout>
 
     <LinearLayout
