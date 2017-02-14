@@ -39,7 +39,6 @@ public class MainActivity extends FragmentActivity {
     }
 
 
-
     // 获取主页fragment对象
     public ContentFragment getContentFragment() {
         FragmentManager fm = getSupportFragmentManager();

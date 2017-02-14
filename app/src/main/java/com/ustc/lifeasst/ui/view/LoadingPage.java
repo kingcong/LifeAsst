@@ -31,8 +31,11 @@ public abstract class LoadingPage extends FrameLayout {
 	private View mEmptyPage;
 	private View mSuccessPage;
 
+	Context mContext;
+
 	public LoadingPage(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
+		mContext = context;
 		initView();
 	}
 
@@ -49,19 +52,22 @@ public abstract class LoadingPage extends FrameLayout {
 	private void initView() {
 		// 初始化加载中的布局
 		if (mLoadingPage == null) {
-			mLoadingPage = UIUtils.inflate(R.layout.page_loading);
+//			mLoadingPage = UIUtils.inflate(R.layout.page_loading);
+			mLoadingPage = View.inflate(mContext, R.layout.page_loading, null);
 			addView(mLoadingPage);// 将加载中的布局添加给当前的帧布局
 		}
 
 		// 初始化加载失败布局
 		if (mErrorPage == null) {
-			mErrorPage = UIUtils.inflate(R.layout.page_error);
+//			mErrorPage = UIUtils.inflate(R.layout.page_error);
+			mLoadingPage = View.inflate(mContext, R.layout.page_error, null);
 			addView(mErrorPage);
 		}
 
 		// 初始化数据为空布局
 		if (mEmptyPage == null) {
-			mEmptyPage = UIUtils.inflate(R.layout.page_empty);
+//			mEmptyPage = UIUtils.inflate(R.layout.page_empty);
+			mLoadingPage = View.inflate(mContext, R.layout.page_empty, null);
 			addView(mEmptyPage);
 		}
 
