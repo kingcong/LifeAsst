@@ -100,56 +100,6 @@ public class HomePager extends BasePager {
 		return view;
 	}
 
-//	@Override
-//	public void initData() {
-//
-//		System.out.println("首页初始化啦...");
-
-//		mLoadingPage = View.inflate(mActivity, R.layout.page_loading, null);
-//		flContent.addView(mLoadingPage);
-
-//		initFragment();
-
-//		View view = View.inflate(mActivity, R.layout.home_pager, null);
-//		View mHeaderView = View.inflate(mActivity, R.layout.homepager_listview_header,
-//				null);
-//
-////		flContent.addView(view);
-//
-//		// 修改页面标题
-//		tvTitle.setText("高教区助手");
-//
-//		// 隐藏菜单按钮
-//		btnMenu.setVisibility(View.GONE);
-//
-////		SearchView searchView = (SearchView) view.findViewById(R.id.homepager_searchbar);
-//		ListView listView = (ListView) view.findViewById(R.id.homepager_listview);
-//		listView.addHeaderView(mHeaderView);
-//		listView.setAdapter(new ArrayAdapter<String>(mActivity,
-//				android.R.layout.simple_list_item_1, strs));
-//
-//
-//		mRollViewPager = (RollPagerView) view.findViewById(R.id.roll_view_pager);
-//
-//		//设置播放时间间隔
-//		mRollViewPager.setPlayDelay(2000);
-//		//设置透明度
-//		mRollViewPager.setAnimationDurtion(500);
-//		//设置适配器
-//		mRollViewPager.setAdapter(new TestNormalAdapter(mRollViewPager));
-//
-//		//设置指示器（顺序依次）
-//		//自定义指示器图片
-//		//设置圆点指示器颜色
-//		//设置文字指示器
-//		//隐藏指示器
-//		//mRollViewPager.setHintView(new IconHintView(this, R.drawable.point_focus, R.drawable.point_normal));
-//		mRollViewPager.setHintView(new ColorPointHintView(mActivity, Color.YELLOW,Color.WHITE));
-//		//mRollViewPager.setHintView(new TextHintView(this));
-//		//mRollViewPager.setHintView(null);
-//	}
-
-
 	class NewsAdapter extends BaseAdapter {
 
 		private BitmapUtils mBitmapUtils;
