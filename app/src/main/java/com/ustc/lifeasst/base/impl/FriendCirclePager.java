@@ -11,12 +11,10 @@ import android.widget.TextView;
 
 import com.ustc.lifeasst.R;
 import com.ustc.lifeasst.base.BasePager;
-import com.ustc.lifeasst.ui.adapter.FragmentAdapter;
 import com.ustc.lifeasst.ui.fragment.BaseFragment;
 import com.ustc.lifeasst.ui.fragment.FragmentFactory;
-import com.ustc.lifeasst.ui.fragment.HomeFragment;
-import com.ustc.lifeasst.ui.fragment.RecommendFragment;
-import com.ustc.lifeasst.utils.UIUtils;
+import com.ustc.lifeasst.ui.view.NoScrollViewPager;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,27 +36,6 @@ public class FriendCirclePager extends BasePager {
 	public FriendCirclePager(Activity activity) {
 		super(activity);
 	}
-
-//	@Override
-//	public void initData() {
-//		System.out.println("智慧服务初始化啦...");
-//
-//		// 要给帧布局填充布局对象
-//		TextView view = new TextView(mActivity);
-//		view.setText("智慧服务");
-//		view.setTextColor(Color.RED);
-//		view.setTextSize(22);
-//		view.setGravity(Gravity.CENTER);
-//
-//		flContent.addView(view);
-//
-//		// 修改页面标题
-//		tvTitle.setText("朋友圈");
-//
-//		// 显示菜单按钮
-//		btnMenu.setVisibility(View.VISIBLE);
-//	}
-
 
 	@Override
 	public View onCreateSuccessView() {

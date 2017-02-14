@@ -3,14 +3,55 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_launcher"
+            android:id="@+id/friendview_header_image"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/friendview_header_image"
+            android:layout_marginTop="10dp"
+            android:textSize="@dimen/bold_font_size"
+            android:text="好友去哪"
+            android:id="@+id/friendview_header_friend"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/friendview_header_friend"
+            android:layout_toRightOf="@+id/friendview_header_image"
+            android:textSize="@dimen/normal_font_size"
+            android:layout_marginTop="10dp"
+            android:text="分享吃喝玩乐好去处"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="猛戳去看>"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/bg_page"/>
+
     <include layout="@layout/friend_view_top_tab" />
 
     <android.support.v4.view.ViewPager
         android:id="@+id/id_foodview_vp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1">
-    </android.support.v4.view.ViewPager>
+        android:layout_weight="1"
+    />
 
     <!--<ListView-->
         <!--android:layout_width="match_parent"-->
