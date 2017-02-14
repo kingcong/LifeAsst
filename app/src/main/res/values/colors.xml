@@ -25,4 +25,10 @@
     <color name="menu_bg_press">#cecece</color>
 
     <color name="white_color">#ffffff</color>
+
+    <color name="colorAllTheme">#FFAA11</color>
+
+    <color name="nomalItemColor">#000000</color>
+    <color name="selectedItemColor">#ff0000</color>
+
 </resources>

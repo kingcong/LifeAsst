@@ -24,7 +24,7 @@ public abstract class LoadingPage extends FrameLayout {
 	private static final int STATE_LOAD_EMPTY = 4;// 数据为空
 	private static final int STATE_LOAD_SUCCESS = 5;// 加载成功
 
-	private int mCurrentState = STATE_LOAD_UNDO;// 当前状态
+	private int mCurrentState = STATE_LOAD_SUCCESS;// 当前状态
 
 	private View mLoadingPage;
 	private View mErrorPage;
@@ -46,6 +46,7 @@ public abstract class LoadingPage extends FrameLayout {
 
 	public LoadingPage(Context context) {
 		super(context);
+		mContext = context;
 		initView();
 	}
 
@@ -60,14 +61,14 @@ public abstract class LoadingPage extends FrameLayout {
 		// 初始化加载失败布局
 		if (mErrorPage == null) {
 //			mErrorPage = UIUtils.inflate(R.layout.page_error);
-			mLoadingPage = View.inflate(mContext, R.layout.page_error, null);
+			mErrorPage = View.inflate(mContext, R.layout.page_error, null);
 			addView(mErrorPage);
 		}
 
 		// 初始化数据为空布局
 		if (mEmptyPage == null) {
 //			mEmptyPage = UIUtils.inflate(R.layout.page_empty);
-			mLoadingPage = View.inflate(mContext, R.layout.page_empty, null);
+			mEmptyPage = View.inflate(mContext, R.layout.page_empty, null);
 			addView(mEmptyPage);
 		}
 

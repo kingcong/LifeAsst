@@ -2,7 +2,9 @@ package com.ustc.lifeasst.ui.fragment;
 
 import com.ustc.lifeasst.ui.view.LoadingPage.ResultState;
 
+import android.content.Context;
 import android.view.View;
+import android.widget.TextView;
 
 /**
  * 推荐
@@ -11,9 +13,16 @@ import android.view.View;
  */
 public class RecommendFragment extends BaseFragment {
 
+	public RecommendFragment(Context context) {
+		super(context);
+		mContext = context;
+	}
+
 	@Override
 	public View onCreateSuccessView() {
-		return null;
+		TextView view = new TextView(mContext);
+		view.setText(getClass().getSimpleName());
+		return view;
 	}
 
 	@Override
