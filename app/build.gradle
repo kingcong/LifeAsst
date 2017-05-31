@@ -1,20 +1,38 @@
 apply plugin: 'com.android.application'
 
 android {
+
+    useLibrary 'org.apache.http.legacy'
+
+    signingConfigs {
+        release {
+            keyAlias 'lifeasst'
+            keyPassword '475560'
+            storePassword '475560'
+            storeFile file('/Users/kingcong/Desktop/lifeasst.jks')
+        }
+    }
+
     compileSdkVersion 24
-    buildToolsVersion "24.0.3"
+    buildToolsVersion '25.0.0'
     defaultConfig {
         applicationId "com.ustc.lifeasst"
         minSdkVersion 15
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        ndk {
+            abiFilters 'armeabi', 'armeabi-v7a', 'armeabi-v8a', 'x86', 'x86_64', 'mips', 'mips64'
+        }
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            signingConfig signingConfigs.release
         }
     }
 }
@@ -26,9 +44,18 @@ dependencies {
     })
     compile files('libs/xUtils-2.6.14.jar')
     compile files('libs/ViewPagerIndicator_1.1.4.jar')
+    compile files('libs/baidumapapi_base_v4_3_1.jar')
+    compile files('libs/baidumapapi_cloud_v4_3_1.jar')
+    compile files('libs/baidumapapi_map_v4_3_1.jar')
+    compile files('libs/baidumapapi_radar_v4_3_1.jar')
+    compile files('libs/baidumapapi_search_v4_3_1.jar')
+    compile files('libs/baidumapapi_util_v4_3_1.jar')
     compile 'com.android.support:appcompat-v7:24.2.1'
     compile 'com.android.support:design:24.2.1'
     compile 'com.jude:rollviewpager:1.4.6'
     compile 'com.android.support:support-v4:24.2.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha9'
     testCompile 'junit:junit:4.12'
+    compile files('libs/locSDK_6.13.jar')
+    compile 'com.google.code.gson:gson:2.6.2'
 }

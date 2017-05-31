@@ -6,20 +6,20 @@ import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.view.View;
 
-import com.ustc.lifeasst.global.GooglePlayApplication;
+import com.ustc.lifeasst.global.LifeAsstApplication;
 
 public class UIUtils {
 
 	public static Context getContext() {
-		return GooglePlayApplication.getContext();
+		return LifeAsstApplication.getContext();
 	}
 
 	public static Handler getHandler() {
-		return GooglePlayApplication.getHandler();
+		return LifeAsstApplication.getHandler();
 	}
 
 	public static int getMainThreadId() {
-		return GooglePlayApplication.getMainThreadId();
+		return LifeAsstApplication.getMainThreadId();
 	}
 
 	// /////////////////加载资源文件 ///////////////////////////

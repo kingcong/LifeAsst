@@ -1,5 +1,6 @@
 package com.ustc.lifeasst.ui.fragment;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,11 +36,12 @@ public class HomeFragment extends BaseFragment {
 
 	private ArrayList<FriendViewData> mNewsList  = new ArrayList<FriendViewData>();
 
-
+	@SuppressLint("ValidFragment")
 	public HomeFragment() {
 
 	}
 
+	@SuppressLint("ValidFragment")
 	public HomeFragment(Context context) {
 		super(context);
 		mContext = context;

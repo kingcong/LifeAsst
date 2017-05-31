@@ -1,12 +1,18 @@
 package com.ustc.lifeasst.base.impl;
 
 import android.app.Activity;
-import android.graphics.Color;
-import android.view.Gravity;
+import android.content.Intent;
 import android.view.View;
-import android.widget.TextView;
+import android.widget.Button;
 
+import com.baidu.mapapi.map.BaiduMap;
+import com.baidu.mapapi.map.MapView;
+import com.ustc.lifeasst.R;
 import com.ustc.lifeasst.base.BasePager;
+import com.ustc.lifeasst.ui.activity.BusLineSearchDemo;
+import com.ustc.lifeasst.ui.activity.LocationDemo;
+import com.ustc.lifeasst.ui.activity.PoiSearchDemo;
+import com.ustc.lifeasst.ui.activity.RoutePlanDemo;
 
 /**
  * 首页
@@ -16,28 +22,57 @@ import com.ustc.lifeasst.base.BasePager;
  */
 public class NearbyPager extends BasePager {
 
+	private MapView mMapView;
+	private BaiduMap baiduMap;
+
+	private Button routePlanButton;
+	private Button fieldQueryButton;
+	private Button busQueryButton;
+
 	public NearbyPager(Activity activity) {
 		super(activity);
 	}
 
 	@Override
-	public void initData() {
-		System.out.println("新闻中心初始化啦...");
+	public View onCreateSuccessView() {
+		View view = View.inflate(mActivity, R.layout.nearby_pager, null);
 
-		// 要给帧布局填充布局对象
-		TextView view = new TextView(mActivity);
-		view.setText("News");
-		view.setTextColor(Color.RED);
-		view.setTextSize(22);
-		view.setGravity(Gravity.CENTER);
+		tvTitle.setText("周边信息");
 
-		flContent.addView(view);
+		//获取地图控件引用
+		mMapView = (MapView) view.findViewById(R.id.bmapView);
+		baiduMap = mMapView.getMap();
+		baiduMap.setMapType(BaiduMap.MAP_TYPE_NORMAL);
+		baiduMap.setBaiduHeatMapEnabled(false);
 
-		// 修改页面标题
-		tvTitle.setText("周边热门");
+		routePlanButton = (Button) view.findViewById(R.id.routeplanButton);
+		fieldQueryButton = (Button) view.findViewById(R.id.fieldqueryButton);
+		busQueryButton = (Button) view.findViewById(R.id.busqueryButton);
 
-		// 隐藏菜单按钮
-		btnMenu.setVisibility(View.GONE);
+		routePlanButton.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				Intent intent = new Intent(mActivity, RoutePlanDemo.class);
+				mActivity.startActivity(intent);
+			}
+		});
+
+		fieldQueryButton.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				Intent intent = new Intent(mActivity, LocationDemo.class);
+				mActivity.startActivity(intent);
+			}
+		});
+
+		busQueryButton.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				Intent intent = new Intent(mActivity, BusLineSearchDemo.class);
+				mActivity.startActivity(intent);
+			}
+		});
+
+		return view;
 	}
-
 }

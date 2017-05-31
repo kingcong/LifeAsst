@@ -1,5 +1,6 @@
 package com.ustc.lifeasst.ui.fragment;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
@@ -32,10 +33,12 @@ public class SpitFragment extends Fragment {
 
     private Context mContext;
 
+    @SuppressLint("ValidFragment")
     public SpitFragment() {
         // Required empty public constructor
     }
 
+    @SuppressLint("ValidFragment")
     public SpitFragment(Context context) {
         super();
         mContext = context;

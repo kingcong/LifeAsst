@@ -2,6 +2,7 @@ package com.ustc.lifeasst.ui.fragment;
 
 import com.ustc.lifeasst.ui.view.LoadingPage.ResultState;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.View;
 import android.widget.TextView;
@@ -13,6 +14,12 @@ import android.widget.TextView;
  */
 public class RecommendFragment extends BaseFragment {
 
+	@SuppressLint("ValidFragment")
+	public RecommendFragment() {
+
+	}
+
+	@SuppressLint("ValidFragment")
 	public RecommendFragment(Context context) {
 		super(context);
 		mContext = context;
