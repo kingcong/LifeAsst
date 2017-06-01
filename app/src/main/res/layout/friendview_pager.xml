@@ -5,7 +5,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="80dp">
+        android:layout_height="40dp">
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -15,7 +15,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/friendview_header_image"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:textSize="@dimen/bold_font_size"
             android:text="好友去哪"
             android:id="@+id/friendview_header_friend"
@@ -26,7 +26,7 @@
             android:layout_below="@+id/friendview_header_friend"
             android:layout_toRightOf="@+id/friendview_header_image"
             android:textSize="@dimen/normal_font_size"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:text="分享吃喝玩乐好去处"
             />
 
@@ -34,6 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="猛戳去看>"
+            android:id="@+id/friendcircle_click_look"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             />

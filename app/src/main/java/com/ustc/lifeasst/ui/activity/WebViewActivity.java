@@ -4,7 +4,9 @@ import android.app.Activity;
 import android.content.DialogInterface;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
+import android.webkit.GeolocationPermissions;
 import android.webkit.WebChromeClient;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
@@ -26,6 +28,7 @@ public class WebViewActivity extends Activity implements View.OnClickListener{
     private ImageButton btnBack;
     private ImageButton btnShare;
     private ImageButton btnMenu;
+    private Button btnClose;
     private WebView mWebView;
     private ProgressBar pbLoading;
     private String mUrl;
@@ -42,6 +45,7 @@ public class WebViewActivity extends Activity implements View.OnClickListener{
         btnMenu = (ImageButton) findViewById(R.id.btn_menu);
         mWebView = (WebView) findViewById(R.id.wv_news_detail);
         pbLoading = (ProgressBar) findViewById(R.id.pb_loading);
+        btnClose = (Button) findViewById(R.id.btn_close);
 
         llControl.setVisibility(View.VISIBLE);
         btnBack.setVisibility(View.VISIBLE);
@@ -49,6 +53,7 @@ public class WebViewActivity extends Activity implements View.OnClickListener{
 
         btnBack.setOnClickListener(this);
         btnShare.setOnClickListener(this);
+        btnClose.setOnClickListener(this);
 
 
         mUrl = getIntent().getStringExtra("url");
@@ -60,6 +65,32 @@ public class WebViewActivity extends Activity implements View.OnClickListener{
         settings.setBuiltInZoomControls(true);// 显示缩放按钮(wap网页不支持)
         settings.setUseWideViewPort(true);// 支持双击缩放(wap网页不支持)
         settings.setJavaScriptEnabled(true);// 支持js功能
+        settings.setDomStorageEnabled(true);
+
+
+        // //启用数据库
+        settings.setDatabaseEnabled(true);
+        String dir = this.getApplicationContext().getDir("database", this.MODE_PRIVATE).getPath();
+
+        //启用地理定位
+        settings.setGeolocationEnabled(true);
+        //设置定位的数据库路径
+        settings.setGeolocationDatabasePath(dir);
+
+        mWebView.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (event.getAction() == KeyEvent.ACTION_DOWN) {
+                    if (keyCode == KeyEvent.KEYCODE_BACK && mWebView.canGoBack()) {  //表示按返回键
+                        mWebView.goBack();   //后退
+
+                        //webview.goForward();//前进
+                        return true;    //已处理
+                    }
+                }
+                return false;
+            }
+        });
 
         mWebView.setWebViewClient(new WebViewClient() {
             // 开始加载网页
@@ -68,6 +99,8 @@ public class WebViewActivity extends Activity implements View.OnClickListener{
                 super.onPageStarted(view, url, favicon);
                 System.out.println("开始加载网页了");
                 pbLoading.setVisibility(View.VISIBLE);
+
+
             }
 
             // 网页加载结束
@@ -76,6 +109,10 @@ public class WebViewActivity extends Activity implements View.OnClickListener{
                 super.onPageFinished(view, url);
                 System.out.println("网页加载结束");
                 pbLoading.setVisibility(View.INVISIBLE);
+
+                if (mWebView.canGoBack()) {
+                    btnClose.setVisibility(View.VISIBLE);
+                }
             }
 
             // 所有链接跳转会走此方法
@@ -89,6 +126,15 @@ public class WebViewActivity extends Activity implements View.OnClickListener{
         });
 
         mWebView.setWebChromeClient(new WebChromeClient() {
+
+            //配置权限（同样在WebChromeClient中实现）
+            @Override
+            public void onGeolocationPermissionsShowPrompt(String origin,
+                                                           GeolocationPermissions.Callback callback) {
+                callback.invoke(origin, true, false);
+                super.onGeolocationPermissionsShowPrompt(origin, callback);
+            }
+
             @Override
             public void onProgressChanged(WebView view, int newProgress) {
                 super.onProgressChanged(view, newProgress);
@@ -112,11 +158,16 @@ public class WebViewActivity extends Activity implements View.OnClickListener{
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_back:
-                finish();
+                if (mWebView.canGoBack()) {
+                    mWebView.goBack();
+                } else {
+                    finish();
+                }
                 break;
 
-            case R.id.btn_share:
+            case R.id.btn_close:
 //                showShare();
+                finish();
                 break;
 
             default:

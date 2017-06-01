@@ -27,20 +27,20 @@
             android:layout_weight="1"
             android:text="推荐"
             android:textAlignment="center"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/tv_friendview_tab_item3"
-            android:layout_weight="1"
-            android:text="失物招领"
-            android:textAlignment="center"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/tv_friendview_tab_item4"
-            android:layout_weight="1"
-            android:text="求助"
-            android:textAlignment="center"/>
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/tv_friendview_tab_item3"-->
+            <!--android:layout_weight="1"-->
+            <!--android:text="失物招领"-->
+            <!--android:textAlignment="center"/>-->
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/tv_friendview_tab_item4"-->
+            <!--android:layout_weight="1"-->
+            <!--android:text="求助"-->
+            <!--android:textAlignment="center"/>-->
     </LinearLayout>
 
 </LinearLayout>

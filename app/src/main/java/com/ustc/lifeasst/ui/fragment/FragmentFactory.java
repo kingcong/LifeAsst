@@ -24,13 +24,13 @@ public class FragmentFactory {
 				fragment = new HomeFragment(context);
 				break;
 			case 1:
-				fragment = new HelpFragment(context);
+				fragment = new RecommendFragment(context);
 				break;
 			case 2:
 				fragment = new LoserFindFragment(context);
 				break;
 			case 3:
-				fragment = new RecommendFragment(context);
+				fragment = new HelpFragment(context);
 				break;
 
 			default:

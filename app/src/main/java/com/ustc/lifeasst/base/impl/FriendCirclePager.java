@@ -1,16 +1,19 @@
 package com.ustc.lifeasst.base.impl;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.ustc.lifeasst.R;
 import com.ustc.lifeasst.base.BasePager;
+import com.ustc.lifeasst.ui.activity.WebViewActivity;
 import com.ustc.lifeasst.ui.fragment.BaseFragment;
 import com.ustc.lifeasst.ui.fragment.FragmentFactory;
 import com.ustc.lifeasst.ui.view.NoScrollViewPager;
@@ -29,6 +32,7 @@ public class FriendCirclePager extends BasePager {
 
 	private TextView item1, item2, item3, item4;
 	private ViewPager mPageVp;
+	private Button clickLookBtn;
 	List<Fragment> mFragmentList = new ArrayList<Fragment>();
 
 	private int currentPosition = 0;
@@ -40,6 +44,18 @@ public class FriendCirclePager extends BasePager {
 	@Override
 	public View onCreateSuccessView() {
 		View view = View.inflate(mActivity, R.layout.friendview_pager, null);
+
+		relativeLayout.setVisibility(View.GONE);
+
+		clickLookBtn = (Button) view.findViewById(R.id.friendcircle_click_look);
+		clickLookBtn.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				Intent intent = new Intent(mActivity, WebViewActivity.class);
+				intent.putExtra("url", "http://images.uodoo.com/?src=speeddial");
+				mActivity.startActivity(intent);
+			}
+		});
 
 		mPageVp = (ViewPager) view.findViewById(R.id.id_foodview_vp);
 
@@ -60,21 +76,21 @@ public class FriendCirclePager extends BasePager {
 				mPageVp.setCurrentItem(1);
 			}
 		});
-		item3 = (TextView) view.findViewById(R.id.tv_friendview_tab_item3);
-		item3.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				mPageVp.setCurrentItem(2);
-
-			}
-		});
-		item4 = (TextView) view.findViewById(R.id.tv_friendview_tab_item4);
-		item4.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				mPageVp.setCurrentItem(3);
-			}
-		});
+//		item3 = (TextView) view.findViewById(R.id.tv_friendview_tab_item3);
+//		item3.setOnClickListener(new View.OnClickListener() {
+//			@Override
+//			public void onClick(View view) {
+//				mPageVp.setCurrentItem(2);
+//
+//			}
+//		});
+//		item4 = (TextView) view.findViewById(R.id.tv_friendview_tab_item4);
+//		item4.setOnClickListener(new View.OnClickListener() {
+//			@Override
+//			public void onClick(View view) {
+//				mPageVp.setCurrentItem(3);
+//			}
+//		});
 
 		mPageVp.setCurrentItem(0);
 
@@ -116,8 +132,8 @@ public class FriendCirclePager extends BasePager {
 	private void resetOtherTextView() {
 		item1.setTextColor(mActivity.getResources().getColor(R.color.nomalItemColor));
 		item2.setTextColor(mActivity.getResources().getColor(R.color.nomalItemColor));
-		item3.setTextColor(mActivity.getResources().getColor(R.color.nomalItemColor));
-		item4.setTextColor(mActivity.getResources().getColor(R.color.nomalItemColor));
+//		item3.setTextColor(mActivity.getResources().getColor(R.color.nomalItemColor));
+//		item4.setTextColor(mActivity.getResources().getColor(R.color.nomalItemColor));
 	}
 
 	/**
@@ -125,7 +141,7 @@ public class FriendCirclePager extends BasePager {
 	 */
 	class MyAdapter extends FragmentPagerAdapter {
 
-		private String[] mTabNames = {"1","2","3","4"};
+		private String[] mTabNames = {"1","2"};
 
 		public MyAdapter(FragmentManager fm) {
 			super(fm);

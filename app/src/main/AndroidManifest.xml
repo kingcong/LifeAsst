@@ -33,17 +33,16 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <!-- 访问网络，网络定位需要上网 -->
     <uses-permission android:name="android.permission.INTERNET" />
-
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
+        android:name=".global.LifeAsstApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:name=".global.LifeAsstApplication">
+        android:theme="@style/AppTheme">
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="bQO8lfahRtlBIuk2ersB3P9dyE3e10AK" />
@@ -61,12 +60,13 @@
         <activity android:name=".ui.activity.GuideActivity" />
         <activity android:name=".ui.activity.MainActivity" />
         <activity android:name=".ui.activity.WebViewActivity" />
-        <activity android:name=".ui.activity.HelloMapActivity"></activity>
-        <activity android:name=".ui.activity.BaseMapDemo"></activity>
-        <activity android:name=".ui.activity.LocationDemo"></activity>
-        <activity android:name=".ui.activity.PoiSearchDemo"></activity>
-        <activity android:name=".ui.activity.RoutePlanDemo"></activity>
-        <activity android:name=".ui.activity.BusLineSearchDemo"></activity>
+        <activity android:name=".ui.activity.HelloMapActivity" />
+        <activity android:name=".ui.activity.BaseMapDemo" />
+        <activity android:name=".ui.activity.LocationDemo" />
+        <activity android:name=".ui.activity.PoiSearchDemo" />
+        <activity android:name=".ui.activity.RoutePlanDemo" />
+        <activity android:name=".ui.activity.BusLineSearchDemo" />
+        <activity android:name=".ui.activity.LoginActivity"></activity>
     </application>
 
 </manifest>

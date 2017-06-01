@@ -18,21 +18,18 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/colorPrimaryDark"
             android:layout_marginLeft="@dimen/normal_margin"
             android:id="@+id/friend_listitem_img1"/>
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/colorAccent"
             android:layout_marginLeft="@dimen/normal_margin"
             android:id="@+id/friend_listitem_img2"/>
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/detail_screen_bg"
             android:layout_marginLeft="@dimen/normal_margin"
             android:layout_marginRight="@dimen/normal_margin"
             android:id="@+id/friend_listitem_img3"/>

@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.ustc.lifeasst.R;
@@ -42,6 +43,7 @@ public class BasePager {
 	private View mEmptyPage;
 	private View mSuccessPage;
 
+	public RelativeLayout relativeLayout;
 
 	public BasePager(Activity activity) {
 		mActivity = activity;
@@ -51,6 +53,7 @@ public class BasePager {
 	// 初始化布局
 	public View initView() {
 		View view = View.inflate(mActivity, R.layout.base_pager, null);
+		relativeLayout = (RelativeLayout) view.findViewById(R.id.title_bar_layout);
 		tvTitle = (TextView) view.findViewById(R.id.tv_title);
 		btnMenu = (ImageButton) view.findViewById(R.id.btn_menu);
 		flContent = (FrameLayout) view.findViewById(R.id.fl_content);
