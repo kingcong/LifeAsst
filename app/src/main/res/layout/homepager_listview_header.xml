@@ -107,18 +107,21 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="喝"
+            android:id="@+id/homepager_drink_button"
             android:layout_gravity="center"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="玩"
+            android:id="@+id/homepager_play_button"
             android:layout_gravity="center"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="乐"
+            android:id="@+id/homepager_happy_button"
             android:layout_gravity="center"/>
     </LinearLayout>
 

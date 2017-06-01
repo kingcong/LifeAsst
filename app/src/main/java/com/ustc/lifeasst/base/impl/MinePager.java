@@ -41,6 +41,10 @@ public class MinePager extends BasePager {
 	public View onCreateSuccessView() {
 		View view = View.inflate(mActivity, R.layout.mine_pager, null);
 
+		tvTitle.setText("我的");
+
+		btnMenu.setVisibility(View.GONE);
+
 		String[] rowNames = {"我的钱包","好友去哪","我的收藏","我的分享","客服中心","关于我们"};
 		int[] iconNames = {R.drawable.ic_launcher,R.drawable.ic_launcher,R.drawable.ic_launcher,
 				R.drawable.ic_launcher,R.drawable.ic_launcher,R.drawable.ic_launcher};

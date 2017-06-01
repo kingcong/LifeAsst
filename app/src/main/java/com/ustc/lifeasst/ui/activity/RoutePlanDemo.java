@@ -131,7 +131,7 @@ public class RoutePlanDemo extends Activity implements BaiduMap.OnMapClickListen
         btnMenu = (ImageButton) findViewById(R.id.btn_menu);
 
         tvTitle = (TextView) findViewById(R.id.tv_title);
-        tvTitle.setText("路劲规划");
+        tvTitle.setText("路径规划");
 
         llControl.setVisibility(View.VISIBLE);
         btnBack.setVisibility(View.VISIBLE);

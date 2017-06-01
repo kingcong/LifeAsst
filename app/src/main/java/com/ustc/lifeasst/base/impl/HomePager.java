@@ -45,10 +45,18 @@ import java.util.ArrayList;
  * @author Kevin
  * @date 2015-10-18
  */
-public class HomePager extends BasePager {
+public class HomePager extends BasePager implements View.OnClickListener{
 
 	private static final String[] strs = new String[] {
 		"first", "second", "third", "fourth", "fifth","first", "second", "third", "fourth", "fifth","first", "second", "third", "fourth", "fifth"
+	};
+
+	private String[] urls = new String[] {
+			"https://m.meishij.net/html5/",
+			"http://m.meilishuo.com/?tabnum=0",
+			"http://m.qyer.com/",
+			"http://m.budejie.com/?frm=www",
+			"http://www.lifeasst.cn"
 	};
 
 	private RollPagerView mRollViewPager;
@@ -74,14 +82,16 @@ public class HomePager extends BasePager {
 				null);
 
 		Button eatButton = (Button) mHeaderView.findViewById(R.id.homepager_eat_button);
+		Button drinkButton = (Button) mHeaderView.findViewById(R.id.homepager_drink_button);
+		Button playButton = (Button) mHeaderView.findViewById(R.id.homepager_play_button);
+		Button happyButton = (Button) mHeaderView.findViewById(R.id.homepager_happy_button);
+
+		eatButton.setOnClickListener(this);
+		drinkButton.setOnClickListener(this);
+		playButton.setOnClickListener(this);
+		happyButton.setOnClickListener(this);
+
 //		flContent.addView(view);
-		eatButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				System.out.println("点击了这个按钮");
-				getDataFromServer();
-			}
-		});
 
 		RelativeLayout relativeLayout = (RelativeLayout) mHeaderView.findViewById(R.id.homepager_header_all);
 		relativeLayout.setOnClickListener(new View.OnClickListener() {
@@ -192,6 +202,32 @@ public class HomePager extends BasePager {
 
 		mNewsList = newsModel.result.data;
 		newsAdapter.notifyDataSetChanged();
+	}
+
+	@Override
+	public void onClick(View view) {
+		String url = null;
+		switch (view.getId()) {
+			case R.id.homepager_eat_button:
+				url = urls[0];
+				break;
+			case R.id.homepager_drink_button:
+				url = urls[1];
+				break;
+			case R.id.homepager_play_button:
+				url = urls[2];
+				break;
+			case R.id.homepager_happy_button:
+				url = urls[3];
+				break;
+			default:
+				url = urls[4];
+				break;
+		}
+
+		Intent intent = new Intent(mAciivity, WebViewActivity.class);
+		intent.putExtra("url", url);
+		mAciivity.startActivity(intent);
 	}
 
 	class NewsAdapter extends BaseAdapter {

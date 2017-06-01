@@ -19,6 +19,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.ustc.lifeasst.R;
+import com.ustc.lifeasst.global.GlobalConstant;
 import com.ustc.lifeasst.utils.PrefUtils;
 
 /**
@@ -125,8 +126,21 @@ public class GuideActivity extends Activity {
                 //更新sp, 已经不是第一次进入了
                 PrefUtils.setBoolean(getApplicationContext(), "is_first_enter", false);
 
+                Intent intent;
                 //跳到主页面
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                boolean isLogin = PrefUtils.getBoolean(GuideActivity.this, GlobalConstant.LoginResult,false);
+
+                if (isLogin) {
+                    // 主页面
+                    intent = new Intent(getApplicationContext(),
+                            MainActivity.class);
+                } else {
+                    // 登录页面
+                    intent = new Intent(getApplicationContext(),
+                            LoginActivity.class);
+                }
+
+                startActivity(intent);
                 finish();
             }
         });

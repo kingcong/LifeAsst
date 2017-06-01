@@ -12,6 +12,7 @@ import android.view.animation.ScaleAnimation;
 import android.widget.RelativeLayout;
 
 import com.ustc.lifeasst.R;
+import com.ustc.lifeasst.global.GlobalConstant;
 import com.ustc.lifeasst.utils.PrefUtils;
 
 /**
@@ -85,9 +86,20 @@ public class SplashActivity extends Activity {
                     intent = new Intent(getApplicationContext(),
                             GuideActivity.class);
                 } else {
-                    // 主页面
-                    intent = new Intent(getApplicationContext(),
-                            MainActivity.class);
+
+                    boolean isLogin = PrefUtils.getBoolean(SplashActivity.this,GlobalConstant.LoginResult,false);
+
+                    if (isLogin) {
+                        // 主页面
+                        intent = new Intent(getApplicationContext(),
+                                MainActivity.class);
+                    } else {
+                        // 登录页面
+                        intent = new Intent(getApplicationContext(),
+                                LoginActivity.class);
+                    }
+
+
                 }
 
                 startActivity(intent);
