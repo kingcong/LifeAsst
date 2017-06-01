@@ -33,6 +33,9 @@ public class MinePager extends BasePager {
 
 	private ListView listView;
 
+	private TextView usernameTv;
+	private TextView signTv;
+
 	public MinePager(Activity activity) {
 		super(activity);
 	}
@@ -60,6 +63,9 @@ public class MinePager extends BasePager {
 		listView.setAdapter(new MineAdapter());
 
 		View headerView = View.inflate(mActivity,R.layout.mine_listview_header,null);
+		usernameTv = (TextView) headerView.findViewById(R.id.mine_username_tv);
+		signTv = (TextView) headerView.findViewById(R.id.mine_sign_tv);
+
 		listView.addHeaderView(headerView);
 
 		return view;

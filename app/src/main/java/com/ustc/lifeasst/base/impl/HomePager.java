@@ -5,12 +5,9 @@ import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.graphics.Color;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -33,11 +30,12 @@ import com.lidroid.xutils.http.client.HttpRequest;
 import com.ustc.lifeasst.R;
 import com.ustc.lifeasst.base.BasePager;
 import com.ustc.lifeasst.ui.activity.WebViewActivity;
-import com.ustc.lifeasst.ui.domain.GuessLikeData;
 import com.ustc.lifeasst.ui.model.NewsModel;
 import com.ustc.lifeasst.ui.model.NewsModelDataDetail;
 
 import java.util.ArrayList;
+
+
 
 /**
  * 首页
@@ -294,10 +292,10 @@ public class HomePager extends BasePager implements View.OnClickListener{
 
 	private class TestNormalAdapter extends LoopPagerAdapter {
 		private int[] imgs = {
-				R.drawable.img1,
-				R.drawable.img2,
-				R.drawable.img3,
-				R.drawable.img4,
+				R.drawable.img_one,
+				R.drawable.img_two,
+				R.drawable.img_three,
+				R.drawable.img_four,
 		};
 
 		public TestNormalAdapter(RollPagerView viewPager) {

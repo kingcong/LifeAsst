@@ -87,18 +87,6 @@ public class HomeFragment extends BaseFragment {
 		return view;
 	}
 
-//	public void initData() {
-//		for (int i = 0; i < 20; i++) {
-//			FriendViewData data = new FriendViewData();
-//			int[] localImgs = {R.drawable.img1,R.drawable.img2,R.drawable.img3};
-//			data.setLocalImgs(localImgs);
-//			data.setTitle("情人节的冰与火之歌：玫瑰遇上冰淇淋"+i);
-//			data.setSource("深夜访谈"+i);
-//			data.setTime("45分钟前"+i);
-//			mNewsList.add(data);
-//		}
-//	}
-
 	public void getDataFromServer() {
 
 		System.out.println("start request");

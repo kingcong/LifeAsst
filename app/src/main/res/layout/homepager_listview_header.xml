@@ -15,7 +15,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="13°"
+            android:text="31°"
             android:textColor="@color/white_color"
             android:textSize="60dp"
             android:id="@+id/homepager_tv_temputure"
@@ -23,7 +23,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="北京"
+            android:text="苏州"
             android:textColor="@color/white_color"
             android:textSize="20dp"
             android:layout_toRightOf="@+id/homepager_tv_temputure"
@@ -35,7 +35,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="啊哈"
+            android:text="吴中区"
             android:textColor="@color/white_color"
             android:textSize="20dp"
             android:layout_toRightOf="@+id/homepager_tv_city"
@@ -72,7 +72,6 @@
         <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:background="@color/bg_tab_pressed"
             android:src="@drawable/setting_press"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"/>
